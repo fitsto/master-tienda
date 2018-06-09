@@ -10,7 +10,7 @@ export class FormErrorStateMatcher implements ErrorStateMatcher {
 }
 
 @Component({
-  selector: 'app-form',
+  selector: 'app-auth-form',
   templateUrl: './form.component.html',
   styleUrls: ['./form.component.css']
 })
