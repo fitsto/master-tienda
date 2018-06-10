@@ -7,6 +7,7 @@ import { AngularFireAuthModule } from 'angularfire2/auth';
 import { SharedModule } from '../shared/shared.module';
 import { FormComponent } from './form/form.component';
 import { RegisterComponent } from './register/register.component';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   imports: [
@@ -15,7 +16,7 @@ import { RegisterComponent } from './register/register.component';
     AngularFireAuthModule,
     SharedModule
   ],
-  declarations: [FormComponent, RegisterComponent],
+  declarations: [FormComponent, RegisterComponent, LoginComponent],
   providers: [AuthService]
 })
 export class AuthModule { }
