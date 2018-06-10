@@ -13,16 +13,20 @@ import {User} from '../models/user';
 })
 export class AuthService {
   user: Observable<User>;
+  loggedIn: boolean = null;
   constructor(
     public afAuth: AngularFireAuth,
     private afs: AngularFirestore,
     private router: Router
   ) {
+    this.loggedIn = false;
     this.user = this.afAuth.authState.pipe(
       switchMap(user => {
         if (user) {
+          this.loggedIn = true;
           return this.afs.doc<User>(`users/${user.uid}`).valueChanges();
         } else {
+          this.loggedIn = false;
           return of(null);
         }
       }));
@@ -66,5 +70,9 @@ export class AuthService {
     this.afAuth.auth.signOut().then(() => {
       this.router.navigate(['/login']);
     });
+  }
+
+  isLoggedIn() {
+    return this.loggedIn;
   }
 }
