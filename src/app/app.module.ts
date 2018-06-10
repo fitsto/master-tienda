@@ -10,6 +10,7 @@ import { environment } from '../environments/environment';
 import { SharedModule } from './shared/shared.module';
 import { AuthModule } from './auth/auth.module';
 import { NavigationComponent } from './common/navigation/navigation.component';
+import { AdminModule } from '@admin/admin.module';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { NavigationComponent } from './common/navigation/navigation.component';
     SharedModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,
-    AuthModule
+    AuthModule,
+    AdminModule
   ],
   providers: [],
   bootstrap: [AppComponent]
