@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { AdminRoutingModule } from './admin-routing.module';
 import { SharedModule } from '@shared/shared.module';
 import { AdminComponent } from './admin/admin.component';
+import { ProductsDialogComponent } from './products-dialog/products-dialog.component';
 
 @NgModule({
   imports: [
@@ -11,6 +12,7 @@ import { AdminComponent } from './admin/admin.component';
     AdminRoutingModule,
     SharedModule
   ],
-  declarations: [AdminComponent]
+  declarations: [AdminComponent, ProductsDialogComponent],
+  entryComponents: [ProductsDialogComponent]
 })
 export class AdminModule { }

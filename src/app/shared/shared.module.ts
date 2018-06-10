@@ -28,6 +28,7 @@ import {
 } from '@angular/forms';
 import { AppService } from '../common/app.service';
 import { SnackService } from '../common/snack.service';
+import { Product } from '../models/product';
 
 
 @NgModule({
@@ -57,6 +58,6 @@ import { SnackService } from '../common/snack.service';
     MatTabsModule,
     MatProgressSpinnerModule
   ],
-  providers: [AppService, SnackService]
+  providers: [AppService, SnackService, Product]
 })
 export class SharedModule { }

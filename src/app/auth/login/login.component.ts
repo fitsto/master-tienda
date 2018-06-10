@@ -23,12 +23,8 @@ export class LoginComponent {
     public router: Router,
     private snackService: SnackService,
     public appService: AppService
-  ) {
-    // console.log(auth.isLoggedIn());
-    setTimeout(function() {
-      console.log(auth.isLoggedIn());
-    }, 500);
-  }
+  ) { }
+
   login(user: Auth) {
     this.appService.fireLoader();
     this.auth.emailAndPassword(user.email, user.password).then(credentials => {
